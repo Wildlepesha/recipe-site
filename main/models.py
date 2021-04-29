@@ -1,5 +1,5 @@
 from django.db import models
-from PIL import Image
+import Image
 from django.urls import reverse
 
 
