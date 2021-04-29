@@ -1,5 +1,4 @@
 from django.db import models
-import Image
 from django.urls import reverse
 
 
@@ -33,13 +32,6 @@ class Recipie_Model(models.Model):
             pass
         super().save()
 
-        image = Image.open(self.img.path)
-
-        if image.height > 450 or image.width > 450:
-            resize = (450, 450)
-            image.thumbnail(resize)
-            image.save(self.img.path)
-
     def __str__(self):
         return f'Рецепт {self.title}'
 
@@ -53,13 +45,3 @@ class Recipie_Model(models.Model):
 
 class Image_Model(models.Model):
     image = models.ImageField(verbose_name='превью', default='main/313poeatlas.jpg', upload_to='main')
-
-    def save(self, *args, **kwargs):
-        super().save()
-
-        image = Image.open(self.image.path)
-
-        if image.height > 450 or image.width > 450:
-            resize = (450, 450)
-            image.thumbnail(resize)
-            image.save(self.image.path)
