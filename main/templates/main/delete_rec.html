@@ -1,0 +1,16 @@
+{% extends 'main/index.html' %}
+{% block head %}
+    Удалить рецепт - {{ object.title }}
+{% endblock %}
+{% block content %}
+<div class="content">
+    <h1>Удалить рецепт {{ object.title }}</h1>
+    <div class="form">
+    <form action="" method="post">
+        {% csrf_token %}
+        <button type="submit">Да</button>
+        <a href="{% url 'Show' object.slug %}">Нет</a>
+    </form>
+    </div>
+</div>
+{% endblock %}

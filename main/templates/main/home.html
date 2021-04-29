@@ -1,0 +1,21 @@
+{% extends 'main/index.html' %}
+{% block head %}
+    {{ title }}
+{% endblock %}
+{% block content %}
+<div class="content">
+    <div class="item-wrapper">
+        <h1>Все рецепты</h1>
+    {% for recipe in recipes %}
+            <div class="item">
+                <div><img src="{{ recipe.img.url }}" alt=""></div>
+                <div>
+                    <p>{{ recipe.title.capitalize }}</p>
+                    <p>{{ recipe.ingred }}</p>
+                    <a href="{% url 'Show' recipe.slug %}">Подробнее...</a>
+                </div>
+            </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}

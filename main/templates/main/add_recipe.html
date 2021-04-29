@@ -1,0 +1,19 @@
+{% extends 'main/index.html' %}
+{% block head %} Добавить рецепт {% endblock %}
+
+{% block content %}
+<div class="content">
+<div class="form">
+<form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for i in form %}
+                <div class="text-item">{{ i.label }}</div>
+                {{ i }}
+            {% endfor %}
+    <br>
+            <button type="submit">Отправить</button>
+</form>
+            <p>* - поля, обязательные для заполнения</p>
+</div>
+</div>
+{% endblock %}

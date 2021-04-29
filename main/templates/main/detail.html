@@ -1,0 +1,26 @@
+{% extends 'main/index.html' %}
+{% block head %}
+    {{ recipe.title }}
+{% endblock %}
+{% block content %}
+<div class="content detail">
+        <div class="content item">
+            <div class="aside">
+            <div><img src="{{ recipe.img.url }}" alt=""></div>
+            <div class="aside-col">
+                <div class="row"><b>{{ recipe.title }}</b></div>
+                <br>
+                <div class="row">{{ recipe.ingred.capitalize }}</div>
+            </div>
+            </div>
+            <br>
+            <div class="row">{{ recipe.rec_body }}</div>
+            <br>
+            <iframe src="{{ recipe.yt_link }}" frameborder="0"></iframe>
+        </div>
+        <div class="links">
+            <a href="{% url 'Delete' recipe.slug %}">Удалить рецепт</a>
+            <a href="{% url 'Update' recipe.slug %}">Обновить рецепт</a>
+        </div>
+</div>
+{% endblock %}

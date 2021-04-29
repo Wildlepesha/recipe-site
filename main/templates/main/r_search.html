@@ -1,0 +1,25 @@
+{% extends 'main/index.html' %}
+{% block head %}
+    Поиск
+{% endblock %}
+{% block content %}
+<div class="content">
+    <h2>Найти рецепт</h2>
+    <div class="srch">
+    <h2>Поиск по ингредиентам</h2>
+    <form method="post" action="{% url 'Search-ing' %}">
+        {% csrf_token %}
+        <input type="search" name="searched" placeholder="Например картошка">
+        <button type="submit">Найти</button>
+    </form>
+    </div>
+    <div class="srch">
+    <h2>Поиск по названию блюда</h2>
+     <form method="post" action="{% url 'Search-all' %}">
+        {% csrf_token %}
+        <input type="search" name="searched_all" placeholder="Например блины">
+        <button type="submit">Найти</button>
+    </form>
+    </div>
+</div>
+{% endblock %}

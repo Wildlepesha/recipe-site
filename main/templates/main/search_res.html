@@ -1,0 +1,27 @@
+{% extends 'main/index.html' %}
+{% block head %}
+    Результаты поиска
+{% endblock %}
+{% block content %}
+<div class="content">
+    <div class="item-wrapper">
+    {% if searched %}
+        {% if search_results %}
+            <h1>Вы искали: {{ searched }}</h1>
+            {% for i in search_results %}
+            <div class="item">
+                <div><img src="{{ i.img.url }}" alt=""></div>
+                <div>
+                    <p>{{ i.title.capitalize }}</p>
+                    <p>{{ i.ingred }}</p>
+                    <a href="{% url 'Show' i.slug %}">Подробнее...</a>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <h1>Ничего не нашлось</h1>
+        {% endif %}
+    {% endif %}
+        </div>
+</div>
+{% endblock %}
