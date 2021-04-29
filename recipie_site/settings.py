@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure--h%s!2nvadi0oob7%8z!%cku5$@%vz7dbzq5m1xo9z-#dzmw+i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['lepesha-django-recipe.herokuapp.com']
 
 
 # Application definition
