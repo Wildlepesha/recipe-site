@@ -121,15 +121,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-print(STATIC_URL)
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-print(STATIC_ROOT)
 
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'home'
 
 MEDIA_URL = '/pictures/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'pictures')
+
 
 django_heroku.settings(locals())
